@@ -14,11 +14,13 @@ class AnsweredListView(ListView):
     model = QuizAnswer
     template_name="answered.html"
 
+    collection_id = 1
     def get_queryset(self):
-        return self.model.objects.filter(question__id=1) # TODO - get from kwargs
+        return self.model.objects.filter(question__collection__id=self.collection_id)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        self.collection_id = kwargs.get('collection_id')
         return context
 
 class NewAnswerView(View):

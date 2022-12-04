@@ -1,7 +1,7 @@
 <h1>Answers</h1>
 <ul>
 {% for answer in object_list %}
-    <li>{{ answer.pub_date|date }} - {{ answer.question.question }} - {{ answer.answer }} - </li>
+    <li>{{ answer.pub_date|date }} - {{ answer.question.question }} - {{ answer.answer }} - {{ answer.answered_by }}</li>
 {% empty %}
     <li>No answers yet.</li>
 {% endfor %}
