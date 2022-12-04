@@ -21,5 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', myproj.views.first, name='first'),
     path('answered/<int:question_id>/', myproj.views.AnsweredListView.as_view(), name='answered'),
-    path('answer/<int:question_id>/<int:step>/', myproj.views.NewAnswerView.as_view(), name='answer'), # TODO - include steps
+    path('answer/<int:collection_id>/<int:step>/', myproj.views.NewAnswerView.as_view(), name='answer'), # TODO - include steps
 ]
